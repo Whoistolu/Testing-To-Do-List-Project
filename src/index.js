@@ -4,12 +4,7 @@ import {
   editTodo, removeTodos, addTodo, clearCompletedTodos,
 } from './add.js';
 
-let itemsArray = [];
-
-const storageData = JSON.parse(localStorage.getItem('toDoStorage'));
-if (storageData) {
-  itemsArray = storageData;
-}
+let storageData = JSON.parse(localStorage.getItem('toDoStorage')) || [ ];
 
 const todos = document.querySelector('.todos');
 itemsArray.forEach((item) => {
